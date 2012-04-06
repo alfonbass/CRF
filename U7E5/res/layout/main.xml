@@ -59,6 +59,20 @@
         android:layout_height="wrap_content"
         android:inputType="number" />
 
+    <CheckBox
+        android:id="@+id/trabajador"
+        android:checked="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/trabajador" />
+
+    <RadioButton
+        android:id="@+id/genero"
+        android:checked="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Masculino" />
+
     <Button
         android:id="@+id/guardar"
         android:layout_width="fill_parent"

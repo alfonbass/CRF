@@ -9,5 +9,7 @@
     <string name="edad">Edad</string>
     <string name="pais">País</string>
     <string name="guardar">Guardar</string>
+    <string name="trabajador">trabajador</string>
+    <string name="Masculino">Masculino?</string>
 
 </resources>
