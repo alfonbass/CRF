@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, VistaBasica2Activity!</string>
+    <string name="app_name">VistaBasica2</string>
+    <string name="app_name2">Datos de Formulario</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="edad">Edad</string>
+    <string name="pais">País</string>
+    <string name="guardar">Guardar</string>
+    <string name="trabajador">trabajador</string>
+    <string name="Masculino">Masculino?</string>
+
+</resources>
