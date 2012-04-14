@@ -19,11 +19,21 @@ import android.widget.Spinner;
 
 public class VistaBasica2Activity extends Activity implements OnItemSelectedListener {
 
-	String trabajador= new String(),genero= new String();
+	String trabajador= new String(),genero= new String(),name1 = new String(),
+	name2 = new String(),age = new String();	
+	EditText nombre,apellidos,edad;
+	CheckBox currante;
+	RadioButton sexo;
 	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        nombre = (EditText) findViewById(R.id.firstname);
+        apellidos = (EditText) findViewById(R.id.lastname);
+		edad = (EditText) findViewById(R.id.age);
+		currante = (CheckBox) findViewById(R.id.trabajador);
+		sexo = (RadioButton) findViewById(R.id.genero);
         
         //INICIO --- Spinner de Paises
         final Spinner spinner = (Spinner) findViewById(R.id.country);
@@ -32,46 +42,38 @@ public class VistaBasica2Activity extends Activity implements OnItemSelectedList
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
 		spinner.setOnItemSelectedListener(this);
-		//FIN --- Spinner de Paises
-		
-		//INICIO --- AlertDialog Campos requeridos
-		Builder alert = new AlertDialog.Builder(this);
-		alert.setTitle("Información Requerida");
-		alert.setMessage("Es obligatorio rellenar todos los campos");
-		alert.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
-		  public void onClick(DialogInterface dialog, int which) {
-			  //No tengo ni idea de como implementar esta parte de codigo para detectar que todos los campos están rellenados
-			  
-		  }
-		});
-		alert.show();
-        //FIN --- AlertDialog Campos requeridos
+		//FIN --- Spinner de Paises		
+
+		final Builder alert = new AlertDialog.Builder(this);
 		
 		//INICIO --- Button OnClickListener recogida de datos
         Button boton = (Button) findViewById(R.id.guardar);
-        boton.setOnClickListener(new OnClickListener() {
-			
+        boton.setOnClickListener(new OnClickListener() {			
 			public void onClick(View clickListener) {
-				EditText nombre = (EditText) findViewById(R.id.firstname);
-				String name1 = nombre.getText().toString();
 				
-				EditText apellidos = (EditText) findViewById(R.id.lastname);
-				String name2 = apellidos.getText().toString();
-				
-				EditText edad = (EditText) findViewById(R.id.age);
-				String age = edad.getText().toString();
-				
-				CheckBox currante = (CheckBox) findViewById(R.id.trabajador);
+				name1 = nombre.getText().toString();
+				name2 = apellidos.getText().toString();
+				age = edad.getText().toString();
 				if (currante.isChecked()==true) 
 					trabajador="Trabajador";
 				else
 					trabajador="";
-				
-				RadioButton sexo = (RadioButton) findViewById(R.id.genero);
 				if (sexo.isChecked()==true)
 					genero = "Masculino";
 				else
 					genero = "Femenino";
+				
+				if(name1.equals("")||name2.equals("")||age.equals("")){
+					//INICIO --- AlertDialog Campos requeridos
+					alert.setTitle("Información Requerida");
+					alert.setMessage("Es obligatorio rellenar todos los campos");
+					alert.setCancelable(false);
+					alert.setNeutralButton("OK",new DialogInterface.OnClickListener() {
+						  public void onClick(DialogInterface dialog, int which) {}
+						});
+					alert.show();
+				    //FIN --- AlertDialog Campos requeridos	 
+				}else{
 
 				Intent intent=new Intent(VistaBasica2Activity.this.getApplication(), FormularioActivity.class );
 				intent.putExtra("n",name1);
@@ -81,6 +83,7 @@ public class VistaBasica2Activity extends Activity implements OnItemSelectedList
 				intent.putExtra("t", trabajador);
 				intent.putExtra("g", genero);
 				startActivity(intent);
+				}
 			}
 		});
       //FIN --- Button OnClickListener recogida de datos
@@ -88,12 +91,10 @@ public class VistaBasica2Activity extends Activity implements OnItemSelectedList
     
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3) {
-		// TODO Auto-generated method stub
 		
 	}
 	
 	public void onNothingSelected(AdapterView<?> arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 }
