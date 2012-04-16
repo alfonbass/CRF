@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+ 
+		<item android:id="@+id/guardar" 
+		    android:title="@string/guardar"
+      		android:icon="@android:drawable/ic_menu_save"></item>
+		<item android:id="@+id/eliminar" 
+		    android:title="@string/eliminar"
+      		android:icon="@android:drawable/ic_menu_delete"></item>
+		<item android:id="@+id/opciones" 
+		    android:title="@string/opciones"
+      		android:icon="@android:drawable/ic_menu_preferences"></item>
+		<item android:id="@+id/ayuda"
+		    android:title="@string/ayuda"
+		    android:icon="@android:drawable/ic_menu_help"/>
+		<item android:id="@+id/salir"
+		    android:title="@string/salir"
+		    android:icon="@android:drawable/ic_menu_close_clear_cancel"/>
+</menu>

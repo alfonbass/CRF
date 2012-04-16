@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MenuActivity!</string>
+    <string name="app_name">U8E2</string>
+    <string name="guardar">Guardar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="opciones">Opciones</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="salir">Salir</string>
+
+</resources>
