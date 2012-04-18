@@ -16,21 +16,29 @@ import android.widget.Button;
 
 public class NotificacionActivity extends Activity {
 	
-	NotificationManager notificationM = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 	int NOTIFICATION_ID = 1;
-	int iconToShowInNotification = R.drawable.ic_launcher;
-	long timeInMilis = System.currentTimeMillis();
-	CharSequence notificationMessage = "Ha pulsado el boton de notificación";
-	Notification notification = new Notification(iconToShowInNotification, notificationMessage, timeInMilis);
-	
-	Intent notificationIntent = new Intent(this, NotificacionActivity.class);
-	PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
-	
-	Builder alert = new AlertDialog.Builder(this);
-	
+    int iconToShowInNotification = R.drawable.ic_launcher;
+    long timeInMilis;
+    NotificationManager notificationM;
+    CharSequence notificationMessage;
+    PendingIntent pendingIntent;
+    Builder alert;
+    Notification notification;
+   
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+       
+        timeInMilis = System.currentTimeMillis();
+        notificationM = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+       
+        CharSequence notificationMessage = "Ha pulsado el boton de notificación";
+        notification = new Notification(iconToShowInNotification, notificationMessage, timeInMilis);
+       
+        Intent notificationIntent = new Intent(this, NotificacionActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+        notification.setLatestEventInfo(this, "Titulo", "Esto es muestra al desplegar la barra", pendingIntent);
+        alert = new AlertDialog.Builder(this);
         
         Button boton = (Button) findViewById(R.id.boton);
         boton.setOnClickListener(new OnClickListener() {			
@@ -42,7 +50,7 @@ public class NotificacionActivity extends Activity {
 				alert.setPositiveButton("Si", new DialogInterface.OnClickListener() {
 					  public void onClick(DialogInterface dialog, int which) {
 						  notificationM.cancel(NOTIFICATION_ID);
-						  
+						  finish();
 					  }
 					});
 				alert.setNegativeButton("No",  new DialogInterface.OnClickListener() {
