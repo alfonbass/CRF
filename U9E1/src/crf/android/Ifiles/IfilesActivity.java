@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import android.app.Activity;
-import android.content.*;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,28 +15,29 @@ import android.widget.Toast;
 
 public class IfilesActivity extends Activity {
 	
-	String filename = "file.txt";
-	private ContextWrapper context;
-	FileOutputStream fileOutputStream;
-	EditText string = (EditText) findViewById(R.id.texto);
-	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        final String filename = "file.txt";
+    	final Context context = this;
+    	
+    	final EditText string = (EditText) findViewById(R.id.texto);
         
         Button guardar = (Button) findViewById(R.id.guardar);
         guardar.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {	
 				
 		        try {
-		            fileOutputStream = context.openFileOutput(filename, Context.MODE_APPEND);
+		        	FileOutputStream fileOutputStream = context.openFileOutput(filename, Context.MODE_PRIVATE);
 		            fileOutputStream.write(string.getText().toString().getBytes());
 		            fileOutputStream.close();
 		        } catch (FileNotFoundException e) {
 		            e.printStackTrace();
 		        } catch (IOException e) {
 		            e.printStackTrace();
-		        }				
+		        }
+		        Toast.makeText(context, "Guardado", Toast.LENGTH_LONG).show();
 			}
 		});
         Button obtener = (Button) findViewById(R.id.obtener);
@@ -55,8 +56,7 @@ public class IfilesActivity extends Activity {
 				} catch (IOException e) {
 				    e.printStackTrace();
 				}
-				//Puede haber fallo porque context esté vacio
-				Toast.makeText(context, contenido, Toast.LENGTH_LONG);
+				Toast.makeText(context, contenido, Toast.LENGTH_LONG).show();
 			}
         });
     }
