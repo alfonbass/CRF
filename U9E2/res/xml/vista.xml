@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <EditTextPreference android:name="text"
+        android:summary="texto a guardar" 
+        android:defaultValue=" "
+        android:title="guardar" 
+        android:key="editTextPref" />
+</PreferenceScreen>
