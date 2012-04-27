@@ -12,18 +12,16 @@ import android.os.Environment;
 import android.util.Log;
 
 public class SdActivity extends Activity {
-
-	
-	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        Context context = null;
+                
         String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-			File imagen = new File(context.getExternalFilesDir (Environment.DIRECTORY_DOWNLOADS), "17209831951787883743.png");
+        Context context = this;
+        File imagen = new File(context.getExternalFilesDir (Environment.DIRECTORY_DOWNLOADS), "17209831951787883743.png");
+        if (Environment.MEDIA_MOUNTED.equals(state)) {			
         	try {
-        	    InputStream inputStream = context.getResources().openRawResource(R.id.imagen);
+        	    InputStream inputStream = context.getResources().openRawResource(R.drawable.ic_launcher);
         	    OutputStream outputStream = new FileOutputStream(imagen);
         	    byte[] data = new byte[inputStream.available()];
         	    inputStream.read(data);
