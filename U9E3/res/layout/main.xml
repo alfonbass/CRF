@@ -8,7 +8,6 @@
         android:id="@+id/imagen"
         android:contentDescription="@string/hello"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:src="@drawable/ic_launcher" />
+        android:layout_height="fill_parent" />
 
 </LinearLayout>

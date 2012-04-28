@@ -7,9 +7,12 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import android.app.Activity;
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 
 public class SdActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
@@ -18,7 +21,11 @@ public class SdActivity extends Activity {
                 
         String state = Environment.getExternalStorageState();
         Context context = this;
-        File imagen = new File(context.getExternalFilesDir (Environment.DIRECTORY_DOWNLOADS), "17209831951787883743.png");
+        File imagen = new File("/mnt/sdcard/Android/data/crf.android.sdcard/files/Download/", "17209831951787883743.png");
+        //File imagen = new File(context.getExternalFilesDir (Environment.DIRECTORY_DOWNLOADS), "17209831951787883743.png");
+        //ImageView background = (ImageView) findViewById(R.id.imagen);
+        //background.setImageURI(Uri.fromFile(imagen));
+        //background.setScaleType(ScaleType.FIT_XY);
         if (Environment.MEDIA_MOUNTED.equals(state)) {			
         	try {
         	    InputStream inputStream = context.getResources().openRawResource(R.drawable.ic_launcher);
