@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Rol</string>
+    <string name="app_name">U10E1</string>
+    <string name="nombre">Nombre</string>
+    <string name="nivel">Nivel</string>
+    <string name="experiencia">Experiencia</string>
+    <string name="fuerza">Fuerza</string>
+    <string name="magia">Magia</string>
+    <string name="cargar">Cargar</string>
+
+</resources>
