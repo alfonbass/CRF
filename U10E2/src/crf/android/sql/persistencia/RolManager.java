@@ -15,11 +15,6 @@ public class RolManager {
       ContentValues rolContentValues = convertRolInContentValues(rol);
       return rolAdapter.createRol(rolContentValues);
     }
-    
-    public boolean updateRol(Rol rol){
-    	ContentValues rolContentValues = convertRolInContentValues(rol);
-    	return rolAdapter.updateRol(2, rolContentValues);
-    }
 
     public Rol getRolById(int id){
       Cursor rolCursor = rolAdapter.fetchRol(id);
@@ -32,9 +27,7 @@ public class RolManager {
       contentValues.put(RolAdapter.KEY_NAME, rol.getName());
       contentValues.put(RolAdapter.KEY_LEVEL, rol.getLevel());
       contentValues.put(RolAdapter.KEY_XP, rol.getXp());
-      contentValues.put(RolAdapter.KEY_VD, rol.getVd());
       contentValues.put(RolAdapter.KEY_FR, rol.getFr());
-      contentValues.put(RolAdapter.KEY_DF, rol.getDf());
       contentValues.put(RolAdapter.KEY_MG, rol.getMg());
       return contentValues;
     }
@@ -45,9 +38,7 @@ public class RolManager {
       rol.setName(cursor.getString(cursor.getColumnIndex(RolAdapter.KEY_NAME)));
       rol.setLevel(cursor.getInt(cursor.getColumnIndex(RolAdapter.KEY_LEVEL)));
       rol.setXp(cursor.getInt(cursor.getColumnIndex(RolAdapter.KEY_XP)));
-      rol.setVd(cursor.getInt(cursor.getColumnIndex(RolAdapter.KEY_VD)));
       rol.setFr(cursor.getInt(cursor.getColumnIndex(RolAdapter.KEY_FR)));
-      rol.setDf(cursor.getInt(cursor.getColumnIndex(RolAdapter.KEY_DF)));
       rol.setMg(cursor.getInt(cursor.getColumnIndex(RolAdapter.KEY_MG)));
       cursor.close();
       return rol;
