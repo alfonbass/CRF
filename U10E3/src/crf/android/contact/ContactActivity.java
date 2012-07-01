@@ -18,12 +18,12 @@ public class ContactActivity extends ListActivity {
 	
 		String[] projection=new String[] {Phone._ID, Phone.DISPLAY_NAME, Phone.NUMBER};
 	
-		String filtro=Phone.DISPLAY_NAME+" LIKE ?"; //Filtro
+		//String filtro=Phone.DISPLAY_NAME+" LIKE ?"; Filtro posible
 	
 		Cursor cursor=getContentResolver().query(
 			ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
 			projection, 
-			filtro, null, 
+			null, null, 
 			Phone.DISPLAY_NAME+" ASC");
 	
 		startManagingCursor(cursor);

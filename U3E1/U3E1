@@ -1,0 +1,20 @@
+Ejercicio 1. Sqliteman
+
+Realice las siguientes acciones con la herramienta Sqliteman:
+
+*Instale la herramienta Sqliteman
+sudo apt-get install sqliteman
+
+*Abra la base de datos de las alarmas del teléfono que se obtuvo de la unidad anterior
+sqlite3 alarms.db
+
+*Modifique los registros, añadiendo nuevas filas usando sentencias INSERT.
+no sé como hacerlo desde sqlite3 pero si desde sqliteman
+
+*Anote la sentencia INSERT utilizada con todos sus parámetros
+
+
+*Vuelva a insertar la base de datos en el emulador y para comprobar si los cambios han surtido efecto
+adb push ./alarms.db /data/data/com.android.deskclock/databases/alarms.db
+67 KB/s (4096 bytes in 0.059s)
+

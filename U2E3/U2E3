@@ -1,0 +1,21 @@
+android@crf-ASOLIF:~$ android list targets
+Available Android targets:
+id: 6 or "android-10"
+     Name: Android 2.3.3
+     Type: Platform
+     API level: 10
+     Revision: 2
+     Skins: WVGA854, QVGA, WQVGA400, WVGA800 (default), HVGA, WQVGA432
+     ABIs : armeabi
+
+
+android@crf-ASOLIF:~$ android create avd -t android-10 -n TerminalAVD -s HVGA
+Auto-selecting single ABI armeabi
+Android 2.3.3 is a basic Android platform.
+Do you wish to create a custom hardware profile [no]no
+Created AVD 'TerminalAVD' based on Android 2.3.3, ARM (armeabi) processor,
+with the following hardware config:
+hw.lcd.density=160
+hw.ramSize=256
+android@crf-ASOLIF:~$ 
+

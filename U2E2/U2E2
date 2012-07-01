@@ -1,0 +1,78 @@
+UNIDAD 2
+
+Ejercicio 2. Línea de Comandos
+
+*Nombre de la base de datos:alarms.db
+ Nombre de la tabla que contiene:main
+
+*Estructura de la tabla principal
+sqlite> .tables
+alarms            android_metadata
+
+*Acceda a la base de datos y averigüe el número de registros.
+sqlite> select * from alarms
+   ...> ;
+       _id = 1
+      hour = 8
+   minutes = 30
+daysofweek = 31
+ alarmtime = 0
+   enabled = 0
+   vibrate = 1
+   message = 
+     alert = 
+
+       _id = 2
+      hour = 9
+   minutes = 0
+daysofweek = 96
+ alarmtime = 0
+   enabled = 0
+   vibrate = 1
+   message = 
+     alert = content://settings/system/alarm_alert
+
+
+*Desde el emulador, cree una alarma para el día de mañana a las 9.00.
+Hecho
+
+*Vuelva a acceder a la base de datos por línea de comandos y consulte de nuevo las alarmas. Anote el número de registros (esta información será necesaria para la corrección del ejercicio).
+sqlite> select * from alarms
+   ...> ;
+       _id = 1
+      hour = 8
+   minutes = 30
+daysofweek = 31
+ alarmtime = 0
+   enabled = 0
+   vibrate = 1
+   message = 
+     alert = 
+
+       _id = 2
+      hour = 9
+   minutes = 0
+daysofweek = 96
+ alarmtime = 0
+   enabled = 0
+   vibrate = 1
+   message = 
+     alert = content://settings/system/alarm_alert
+
+       _id = 3
+      hour = 9
+   minutes = 0
+daysofweek = 64
+ alarmtime = 0
+   enabled = 1
+   vibrate = 1
+   message = 
+     alert = content://settings/system/alarm_alert
+
+*Modifique el registro actual y vea los cambios en el emulador.
+No he sabido hacerlo desde terminal,necesitaria que me guiaras un poco
+
+*Saque una copia de la base de datos del teléfono y guárdela en una carpeta local del ordenador.
+adb pull /data/data/com.android.deskclock/databases/alarms.db /home/android/Ejercicios/U2E2/
+44 KB/s (4096 bytes in 0.090s)
+

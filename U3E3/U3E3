@@ -1,0 +1,14 @@
+ndroid@crf-ASOLIF:~/Ejercicios/U2E2$ android create project --target 6 --name JoseAlberto --activity Josealberto --package paquete.josealberto --path /home/android/Ejercicios/U3E3/Proyectodesdeterminal/
+Created directory /home/android/Ejercicios/U3E3/Proyectodesdeterminal/src/paquete/josealberto
+Added file /home/android/Ejercicios/U3E3/Proyectodesdeterminal/src/paquete/josealberto/Josealberto.java
+Created directory /home/android/Ejercicios/U3E3/Proyectodesdeterminal/res
+Created directory /home/android/Ejercicios/U3E3/Proyectodesdeterminal/bin
+Created directory /home/android/Ejercicios/U3E3/Proyectodesdeterminal/libs
+Created directory /home/android/Ejercicios/U3E3/Proyectodesdeterminal/res/values
+Added file /home/android/Ejercicios/U3E3/Proyectodesdeterminal/res/values/strings.xml
+Created directory /home/android/Ejercicios/U3E3/Proyectodesdeterminal/res/layout
+Added file /home/android/Ejercicios/U3E3/Proyectodesdeterminal/res/layout/main.xml
+Added file /home/android/Ejercicios/U3E3/Proyectodesdeterminal/AndroidManifest.xml
+Added file /home/android/Ejercicios/U3E3/Proyectodesdeterminal/build.xml
+Added file /home/android/Ejercicios/U3E3/Proyectodesdeterminal/proguard.cfg
+
