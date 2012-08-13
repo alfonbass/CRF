@@ -23,6 +23,7 @@ public class CountManager {
 
     private ContentValues convertCountInContentValues(Count count) {
       ContentValues contentValues = new ContentValues();
+      contentValues.put(CountAdapter.KEY_ID, count.getId());
       contentValues.put(CountAdapter.KEY_NAME, count.getName());
       contentValues.put(CountAdapter.KEY_MONEY, count.getMoney());
       return contentValues;
@@ -30,6 +31,7 @@ public class CountManager {
 
     private Count convertCursorInCount(Cursor cursor) {
       Count count = new Count();
+      count.setId(cursor.getInt(cursor.getColumnIndex(CountAdapter.KEY_ID)));
       count.setName(cursor.getString(cursor.getColumnIndex(CountAdapter.KEY_NAME)));
       count.setMoney(cursor.getInt(cursor.getColumnIndex(CountAdapter.KEY_MONEY)));
       cursor.close();

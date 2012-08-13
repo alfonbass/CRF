@@ -6,22 +6,20 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-public class CountAdapter {
+public class CategoryAdapter {
 	public static final String KEY_ID = "id";
 	public static final String KEY_NAME ="nombre";
-	public static final String KEY_MONEY = "dinero";
 	private DatabaseHelper databaseHelper;
 	private SQLiteDatabase database;
 	
-	private static final String COUNT_TABLE = "conta";
-	static final String DATABASE_CREATE = "create table count (id text primary key,"
+	private static final String CATEGORY_TABLE = "category";
+	static final String DATABASE_CREATE = "create table category (id text primary key,"
 			+"KEY_ID not null,"
-			+"KEY_NAME not null,"
-			+"KEY_MONEY not null,);";
+			+"KEY_NAME not null,);";
 	
 	private final Context context;
 	
-	public CountAdapter(Context cntxt) {
+	public CategoryAdapter(Context cntxt) {
 	      this.context = cntxt;
 	      databaseHelper = new DatabaseHelper(context);
 	      database = databaseHelper.getWritableDatabase();
@@ -31,15 +29,15 @@ public class CountAdapter {
 		databaseHelper.close();
 	}
 	
-	public long createCount(ContentValues initialValues) {
-	      return database.insert(COUNT_TABLE, null, initialValues);
+	public long createCategory(ContentValues initialValues) {
+	      return database.insert(CATEGORY_TABLE, null, initialValues);
 	}
 	
-	public boolean deleteCount(long rowId) {
-	      return database.delete(COUNT_TABLE, KEY_ID + "=" + rowId, null) > 0;
+	public boolean deleteCategory(long rowId) {
+	      return database.delete(CATEGORY_TABLE, KEY_ID + "=" + rowId, null) > 0;
 	}
-	public Cursor fetchCount(String rowId) throws SQLException {
-		Cursor mCursor = database.rawQuery("Select * from "+COUNT_TABLE+ " where "+KEY_ID+ " = " +rowId, null);
+	public Cursor fetchCategory(String rowId) throws SQLException {
+		Cursor mCursor = database.rawQuery("Select * from "+CATEGORY_TABLE+ " where "+KEY_ID+ " = " +rowId, null);
 	    if (mCursor != null) {
 	    	mCursor.moveToFirst();
 	    }
@@ -47,7 +45,7 @@ public class CountAdapter {
 	}
 	
 	public boolean updateCount(long rowId, ContentValues values) {
-	      return database.update(COUNT_TABLE, values, KEY_ID + "=" + rowId, null) > 0;//posible fallo
+	      return database.update(CATEGORY_TABLE, values, KEY_ID + "=" + rowId, null) > 0;//posible fallo
 	}
 
 }

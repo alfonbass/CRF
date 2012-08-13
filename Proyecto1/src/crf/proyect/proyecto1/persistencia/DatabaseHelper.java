@@ -13,6 +13,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL(CountAdapter.DATABASE_CREATE);
+		db.execSQL(CategoryAdapter.DATABASE_CREATE);
+		db.execSQL(MovementAdapter.DATABASE_CREATE);
 	}
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		db.execSQL("DROP TABLE IF EXIST notes");
