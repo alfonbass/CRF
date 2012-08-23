@@ -2,6 +2,8 @@ package crf.proyect.proyecto1.persistencia;
 
 public class Movement {
 	private int id;
+	private int id_cuenta;
+	private int id_categoria;
 	private String type;
 	private long cant;
 	
