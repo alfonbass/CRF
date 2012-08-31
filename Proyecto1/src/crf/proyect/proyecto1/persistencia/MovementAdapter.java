@@ -38,8 +38,8 @@ public class MovementAdapter {
 	public boolean deleteMovement(long rowId) {
 	      return database.delete(MOVEMENT_TABLE, KEY_ID + "=" + rowId, null) > 0;
 	}
-	public Cursor fetchMovement(String rowId) throws SQLException {
-		Cursor mCursor = database.rawQuery("Select * from "+MOVEMENT_TABLE+ " where "+KEY_ID+ " = " +rowId, null);
+	public Cursor fetchMovement(int id) throws SQLException {
+		Cursor mCursor = database.rawQuery("Select * from "+MOVEMENT_TABLE+ " where "+KEY_ID+ " = " +id, null);
 	    if (mCursor != null) {
 	    	mCursor.moveToFirst();
 	    }

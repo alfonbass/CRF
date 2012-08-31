@@ -12,7 +12,7 @@ public class CategoryAdapter {
 	private DatabaseHelper databaseHelper;
 	private SQLiteDatabase database;
 	
-	private static final String CATEGORY_TABLE = "category";
+	private static final String CATEGORY_TABLE = "categoria";
 	static final String DATABASE_CREATE = "create table category (id text primary key,"
 			+"KEY_ID not null,"
 			+"KEY_NAME not null,);";
@@ -36,8 +36,8 @@ public class CategoryAdapter {
 	public boolean deleteCategory(long rowId) {
 	      return database.delete(CATEGORY_TABLE, KEY_ID + "=" + rowId, null) > 0;
 	}
-	public Cursor fetchCategory(String rowId) throws SQLException {
-		Cursor mCursor = database.rawQuery("Select * from "+CATEGORY_TABLE+ " where "+KEY_ID+ " = " +rowId, null);
+	public Cursor fetchCategory(int id) throws SQLException {
+		Cursor mCursor = database.rawQuery("Select * from "+CATEGORY_TABLE+ " where "+KEY_ID+ " = " +id, null);
 	    if (mCursor != null) {
 	    	mCursor.moveToFirst();
 	    }

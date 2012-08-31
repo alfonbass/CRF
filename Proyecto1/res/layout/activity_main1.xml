@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_dark" >
+    android:background="#000000" >
 
     <TextView
         android:id="@+id/titulomain"
@@ -25,33 +25,25 @@
         android:layout_below="@+id/titulomain"
         android:text="@string/pregunta"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"/>
 
-    <Button
-        android:id="@+id/buttoncuentas"
+    <Spinner
+        android:id="@+id/spinnermain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/¿?"
-        android:text="@string/cuentas" />
+        android:layout_marginTop="15dp" />
 
-    <Button
-        android:id="@+id/buttoncategorias"
+    <ImageView
+        android:id="@+id/lupa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignBottom="@+id/¿?"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/buttoncuentas"
-        android:text="@string/categorias" />
-
-    <Button
-        android:id="@+id/buttonmovimientos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/buttoncategorias"
-        android:text="@string/transferencias" />
+        android:layout_marginRight="31dp"
+        android:contentDescription="@string/lupa"
+        android:src="@drawable/ic_action_search" />
 
 </RelativeLayout>

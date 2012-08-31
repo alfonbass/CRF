@@ -16,8 +16,8 @@ public class CountManager {
       return countAdapter.createCount(countContentValues);
     }
 
-    public Count getCountByName(String name){
-      Cursor countCursor = countAdapter.fetchCount(name);
+    public Count getCountById(int id){
+      Cursor countCursor = countAdapter.fetchCount(id);
       return convertCursorInCount(countCursor);
     }
 

@@ -38,8 +38,8 @@ public class CountAdapter {
 	public boolean deleteCount(long rowId) {
 	      return database.delete(COUNT_TABLE, KEY_ID + "=" + rowId, null) > 0;
 	}
-	public Cursor fetchCount(String rowId) throws SQLException {
-		Cursor mCursor = database.rawQuery("Select * from "+COUNT_TABLE+ " where "+KEY_ID+ " = " +rowId, null);
+	public Cursor fetchCount(int id) throws SQLException {
+		Cursor mCursor = database.rawQuery("Select * from "+COUNT_TABLE+ " where "+KEY_ID+ " = " +id, null);
 	    if (mCursor != null) {
 	    	mCursor.moveToFirst();
 	    }

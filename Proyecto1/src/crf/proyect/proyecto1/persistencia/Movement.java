@@ -7,8 +7,10 @@ public class Movement {
 	private String type;
 	private long cant;
 	
-	public Movement(int id,String type,long cant){
+	public Movement(int id,int id_cuenta,int id_categoria,String type,long cant){
 		this.id=id;
+		this.id_cuenta=id_cuenta;
+		this.id_categoria=id_categoria;
 		this.type=type;
 		this.cant=cant;
 	}
@@ -20,6 +22,19 @@ public class Movement {
 	}
 	public void setId(int id){
 		this.id=id;
+	}
+	
+	public int getId_Cuenta(){
+		return id_cuenta;
+	}
+	public void setId_Cuenta(int id_cuenta){
+		this.id_cuenta=id_cuenta;
+	}
+	public int getId_Categoria(){
+		return id_categoria;
+	}
+	public void setId_Categoria(int id_categoria){
+		this.id_categoria=id_categoria;
 	}
 	
 	public String getType(){

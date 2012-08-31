@@ -16,8 +16,8 @@ public class MovementManager {
       return movementAdapter.createMovement(movementContentValues);
     }
 
-    public Movement getMovementByName(String name){
-      Cursor movementCursor = movementAdapter.fetchMovement(name);
+    public Movement getMovementById(int id){
+      Cursor movementCursor = movementAdapter.fetchMovement(id);
       return convertCursorInMovement(movementCursor);
     }
 

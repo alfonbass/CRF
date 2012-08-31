@@ -16,8 +16,8 @@ public class CategoryManager {
       return categoryAdapter.createCategory(categoryContentValues);
     }
 
-    public Category getCategoryByName(String name){
-      Cursor categoryCursor = categoryAdapter.fetchCategory(name);
+    public Category getCategoryById(int id){
+      Cursor categoryCursor = categoryAdapter.fetchCategory(id);
       return convertCursorInCategory(categoryCursor);
     }
 
